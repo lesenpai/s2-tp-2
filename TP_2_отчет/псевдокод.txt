@@ -1,0 +1,72 @@
+while (true) {
+	вывод: "Начать/выйти - (go/q) : ";
+	ввод: input;
+	if (input == "go") {
+		if (createArray(...)) {
+			menu(...);
+		}
+		else {
+			continue;
+		}
+	}
+	else if (input == "q") {
+		cout << "Вышли из программы\n";
+		break;
+	}
+	else {
+		cout << "Ошибка! Неправильный ввод.\n";
+		continue;
+	}
+}
+
+function createArray(...) {
+	while (true) {
+		вывод: "Ввести/сгенерировать массив (y/n, назад - q) : ";
+		ввод: input;
+
+		if (input == "y") {
+			вывод: "Введите массив (разделитель - пробел) : \n> ";
+			ввод: input;
+
+			if (input == "") {
+				вывод: "Ошибка! Пустая строка\n";
+				continue;
+			}
+
+			if (массив != NULL) {
+				вывод: "Полученный массив: " + массив;
+				return true;
+			}
+			else {
+				вывод: "Ошибка! Неудалось получить ни одного числа из вашего ввода!\n";
+				continue;
+			}
+		}
+
+		else if (input == "n") {
+			вывод: "Введите размер массива (от 0 до 128) : ";
+			ввод: input;
+
+			if (тип(input) == число && input >= 0 && input <= 128) {
+				массив = getRandomArr(длина_массива);
+				вывод: "Полученный массив: ";
+				printArr(массив, длина_массива);
+				return true;
+			}
+			else {
+				cout << "Ошибка! Неправильный ввод.\n";
+				SetTextColor(COLOR_STD);
+				return false;
+			}
+		}
+		else if (input == "q") {
+			return false;
+		}
+		else {
+			SetTextColor(COLOR_ERR);
+			cout << "Ошибка! Неправильный ввод.\n";
+			SetTextColor(COLOR_STD);
+			continue;
+		}
+	}
+}
