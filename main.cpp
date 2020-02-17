@@ -496,3 +496,4 @@ double standardDeviation(shared_ptr<double>& arr, int& len) {
 }
 
 /* made by LP */
+/* текст*/
